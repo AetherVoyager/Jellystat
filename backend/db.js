@@ -20,8 +20,10 @@ const pool = new Pool({
   database: _POSTGRES_DATABASE,
   password: _POSTGRES_PASSWORD,
   port: _POSTGRES_PORT,
-  ssl: false,
-  sslmode: 'disable'
+  ssl: {
+    rejectUnauthorized: false,
+    mode: 'disable'
+  }
 });
 
 pool.on("error", (err, client) => {
