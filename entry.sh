@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Set environment variables
+export PGSSLMODE=disable
+export NODE_TLS_REJECT_UNAUTHORIZED=0
+
 load_secrets() {
   # Treat all env vars that start with the prefix 'FILE__' as secrets,
   # loading their contents into a variable without the prefix.
