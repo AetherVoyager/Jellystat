@@ -8,8 +8,10 @@ module.exports = {
         password: process.env.POSTGRES_PASSWORD,
         port:process.env.POSTGRES_PORT,
         database: process.env.POSTGRES_DB || 'jfstat',
-        ssl: false,
-        sslmode: 'disable',  
+        ssl: {
+          rejectUnauthorized: false,
+          mode: 'disable'
+        },  
         createDatabase: true,
       },
       migrations: {
@@ -37,8 +39,10 @@ module.exports = {
         password: process.env.DB_PASSWORD,
         port:process.env.POSTGRES_PORT,
         database: process.env.POSTGRES_DB || 'jfstat',
-        ssl: false,
-        sslmode: 'disable',  
+        ssl: {
+          rejectUnauthorized: false,
+          mode: 'disable'
+        },
         createDatabase: true,
       },
       migrations: {
