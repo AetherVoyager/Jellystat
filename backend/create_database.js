@@ -11,7 +11,8 @@ const client = new Client({
   user: _POSTGRES_USER,
   password: _POSTGRES_PASSWORD,
   port: _POSTGRES_PORT,
-  ssl: false
+  ssl: false,
+  sslmode: 'disable'
 });
 
 const createDatabase = async () => {
